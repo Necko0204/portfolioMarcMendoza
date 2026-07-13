@@ -1,0 +1,60 @@
+:root,
+:root[data-theme="light"] {
+  --canvas: #f4f7fa;
+  --canvas-elevated: #f9fbfd;
+  --surface: #ffffff;
+  --surface-strong: #eef3f7;
+  --surface-glass: rgba(255, 255, 255, 0.84);
+  --ink: #0b1526;
+  --ink-soft: #223047;
+  --muted: #5d6b7d;
+  --muted-strong: #425167;
+  --line: rgba(20, 40, 65, 0.14);
+  --line-strong: rgba(20, 40, 65, 0.24);
+  --navy: #071523;
+  --navy-2: #0b2034;
+  --navy-3: #12304a;
+  --cyan: #18c6d5;
+  --cyan-soft: #b8f4f6;
+  --cyan-pale: #e7fbfc;
+  --blue: #245eea;
+  --blue-soft: #dce8ff;
+  --mint: #44d5aa;
+  --mint-soft: #dff9ef;
+  --danger: #c53b42;
+  --danger-soft: #ffebec;
+  --success: #087a5a;
+  --success-soft: #e0f7ee;
+  --warning: #9a6300;
+  --warning-soft: #fff2ce;
+  --shadow-sm: 0 8px 24px rgba(15, 31, 52, 0.08);
+  --shadow-md: 0 22px 60px rgba(13, 31, 52, 0.13);
+  --shadow-dark: 0 28px 80px rgba(0, 9, 20, 0.35);
+  --radius-sm: 4px;
+  --radius: 8px;
+  --content: min(1180px, calc(100vw - 40px));
+  --font-sans: "Segoe UI Variable Text", "Segoe UI", Inter, Arial, sans-serif;
+  --font-display: "Segoe UI Variable Display", "Segoe UI", Inter, Arial, sans-serif;
+}
+
+:root[data-theme="dark"] {
+  --canvas: #07111e;
+  --canvas-elevated: #0a1725;
+  --surface: #0f1e2f;
+  --surface-strong: #14263a;
+  --surface-glass: rgba(10, 23, 37, 0.88);
+  --ink: #eef5fb;
+  --ink-soft: #d7e3ed;
+  --muted: #a0afbf;
+  --muted-strong: #bdcad6;
+  --line: rgba(193, 218, 236, 0.15);
+  --line-strong: rgba(193, 218, 236, 0.28);
+  --cyan-pale: #0e303a;
+  --blue-soft: #142c57;
+  --mint-soft: #12362f;
+  --danger-soft: #3c1d24;
+  --success-soft: #12382f;
+  --warning-soft: #3b2d16;
+  --shadow-sm: 0 10px 28px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 22px 60px rgba(0, 0, 0, 0.3);
+}

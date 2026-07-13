@@ -1,0 +1,53 @@
+services:
+  - type: web
+    name: portfolio-marc-mendoza
+    env: node
+    plan: free
+    buildCommand: corepack enable && pnpm install --frozen-lockfile && pnpm run build
+    startCommand: pnpm run start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: NODE_ENV
+        value: production
+      - key: VITE_CONTACT_EMAIL
+        value: mendoza.marcangelo28@gmail.com
+      - key: VITE_PHONE_NUMBER
+        value: "+63 9602161734"
+      - key: VITE_LOCATION
+        value: Tanza, Cavite
+      - key: VITE_CANONICAL_URL
+        sync: false
+      - key: VITE_FIREBASE_API_KEY
+        sync: false
+      - key: VITE_FIREBASE_AUTH_DOMAIN
+        sync: false
+      - key: VITE_FIREBASE_PROJECT_ID
+        sync: false
+      - key: VITE_FIREBASE_STORAGE_BUCKET
+        sync: false
+      - key: VITE_FIREBASE_MESSAGING_SENDER_ID
+        sync: false
+      - key: VITE_FIREBASE_APP_ID
+        sync: false
+      - key: FIREBASE_SERVICE_ACCOUNT_JSON
+        sync: false
+      - key: FIREBASE_PROJECT_ID
+        sync: false
+      - key: FIREBASE_CLIENT_EMAIL
+        sync: false
+      - key: FIREBASE_PRIVATE_KEY
+        sync: false
+      - key: FIREBASE_STORAGE_BUCKET
+        sync: false
+      - key: ADMIN_UIDS
+        sync: false
+      - key: ALLOWED_ORIGINS
+        sync: false
+      - key: CANONICAL_SITE_URL
+        sync: false
+      - key: CONTACT_RATE_LIMIT_WINDOW_MS
+        value: "900000"
+      - key: CONTACT_RATE_LIMIT_MAX
+        value: "5"

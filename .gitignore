@@ -1,0 +1,16 @@
+node_modules/
+.pnpm-store/
+dist/
+coverage/
+.env
+.env.*
+!.env.example
+*.local
+*.log
+*.inspect.ndjson
+*.backup.yaml
+.DS_Store
+Thumbs.db
+tmp/
+.vite/
+*.tsbuildinfo
