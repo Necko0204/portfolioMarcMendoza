@@ -123,7 +123,13 @@ Every protected request requires a valid Firebase ID token and server-side admin
 
 ## Render Deployment
 
-The repository retains a single Render web service. Render installs dependencies, builds the Vite application, and starts Express. Express serves `dist` and returns `index.html` for client-side routes, so direct navigation to project, contact, operations, and dashboard paths works.
+The repository retains a single Render web service. Render installs dependencies with a pinned pnpm runner, builds the Vite application, and starts Express. Express serves `dist` and returns `index.html` for client-side routes, so direct navigation to project, contact, operations, and dashboard paths works.
+
+Use this Render build command for either the web service or a manually configured static site:
+
+```bash
+pnpm install --frozen-lockfile && pnpm run build
+```
 
 Before the first production deployment:
 

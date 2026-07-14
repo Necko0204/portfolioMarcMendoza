@@ -3,7 +3,7 @@ services:
     name: portfolio-marc-mendoza
     env: node
     plan: free
-    buildCommand: corepack enable && pnpm install --frozen-lockfile && pnpm run build
+    buildCommand: pnpm install --frozen-lockfile && pnpm run build
     startCommand: pnpm run start
     healthCheckPath: /api/health
     envVars:
