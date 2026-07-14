@@ -22,6 +22,20 @@ export const profile: Profile = {
 
 export const experiences: Experience[] = [
   {
+    role: "Executive Virtual Assistant",
+    company: "Tochigami, LLC",
+    location: "Honolulu, Hawaii",
+    period: "June 2025 - June 2026",
+    summary:
+      "Combined administrative reliability, customer support, coordination, and technical project contribution in a client-facing environment.",
+    responsibilities: [
+      "Supported daily operations, client communication, coordination, and workflow execution.",
+      "Contributed to website and technical project work using PHP, ReactJS, and supporting tools.",
+      "Applied documentation and follow-up discipline to technical and non-technical work."
+    ],
+    kind: "operations"
+  },
+  {
     role: "Full-Stack Web Developer (Freelance)",
     company: "Direct Client",
     location: "Indonesia",
@@ -34,20 +48,6 @@ export const experiences: Experience[] = [
       "Improved system workflows, mobile responsiveness, bilingual support, and database security while managing deployment through GitHub and Hostinger."
     ],
     kind: "client"
-  },
-  {
-    role: "Customer Service Specialist",
-    company: "CoBnB Malaysia",
-    location: "Remote - Malaysia",
-    period: "May 2026 - July 2026",
-    summary:
-      "Supported accommodation guests across booking and property workflows while coordinating clear resolutions with operational and finance teams.",
-    responsibilities: [
-      "Managed guest support tickets involving check-ins, booking changes, deposits, refunds, maintenance concerns, special requests, and property policies.",
-      "Coordinated with front office, housekeeping, maintenance, and finance teams to resolve issues efficiently and provide clear guest updates.",
-      "De-escalated complaints, documented important cases for handover, and maintained courteous communication across booking platforms and WhatsApp."
-    ],
-    kind: "operations"
   },
   {
     role: "Social Media & Community Manager (Freelance)",
@@ -74,20 +74,6 @@ export const experiences: Experience[] = [
       "Managed prospect follow-ups and workflow status in GoHighLevel and ClickUp."
     ],
     kind: "client"
-  },
-  {
-    role: "Executive Virtual Assistant",
-    company: "Tochigami, LLC",
-    location: "Honolulu, Hawaii",
-    period: "June 2025 - June 2026",
-    summary:
-      "Combined administrative reliability, customer support, coordination, and technical project contribution in a client-facing environment.",
-    responsibilities: [
-      "Supported daily operations, client communication, coordination, and workflow execution.",
-      "Contributed to website and technical project work using PHP, ReactJS, and supporting tools.",
-      "Applied documentation and follow-up discipline to technical and non-technical work."
-    ],
-    kind: "operations"
   }
 ];
 

@@ -4,11 +4,11 @@ import { renderRoute } from "../test/render";
 import AboutPage from "./AboutPage";
 
 describe("AboutPage", () => {
-  it("shows Marc's current freelance and Malaysia customer-service experience", () => {
+  it("leads with executive VA experience and shows current freelance work", () => {
     renderRoute(<AboutPage />);
 
+    const experienceHeadings = screen.getAllByRole("heading", { level: 3 });
+    expect(experienceHeadings[0]).toHaveTextContent("Executive Virtual Assistant");
     expect(screen.getByRole("heading", { level: 3, name: "Full-Stack Web Developer (Freelance)" })).toBeInTheDocument();
-    expect(screen.getByText("CoBnB Malaysia")).toBeInTheDocument();
-    expect(screen.getByRole("heading", { level: 3, name: "Customer Service Specialist" })).toBeInTheDocument();
   });
 });

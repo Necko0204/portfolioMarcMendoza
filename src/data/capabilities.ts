@@ -201,11 +201,11 @@ export const capabilityGroups: CapabilityGroup[] = [
   {
     id: "operations-support",
     title: "Operations and client support",
-    description: "Real-world experience with guest requests, messages, deadlines, follow-ups, meetings, handovers, and client-facing coordination.",
+    description: "Real-world experience with messages, deadlines, follow-ups, meetings, handovers, and client-facing coordination.",
     items: [
       { name: "Inbox and calendar operations", proof: "Operations evidence", href: "/operations" },
-      { name: "Guest support and issue resolution", proof: "CoBnB Malaysia experience", href: "/about" },
-      { name: "Client communication and CRM hygiene", proof: "Experience + workbook", href: "/about" }
+      { name: "Executive and client support", proof: "Executive VA experience", href: "/about" },
+      { name: "Appointment setting and CRM hygiene", proof: "Experience + workbook", href: "/about" }
     ]
   }
 ];
