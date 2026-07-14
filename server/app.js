@@ -68,6 +68,10 @@ export function createApp(options = {}) {
       }
     })
   );
+  app.use((_req, res, next) => {
+    res.setHeader("Permissions-Policy", "camera=(), microphone=(), geolocation=(), payment=(), usb=()");
+    next();
+  });
   app.use(
     cors({
       origin(origin, callback) {
@@ -118,6 +122,12 @@ export function createApp(options = {}) {
   });
 
   const adminGuard = createAdminGuard({ verifyIdToken, adminUids: config.adminUids });
+
+  app.use("/api/admin", (_req, res, next) => {
+    res.setHeader("Cache-Control", "no-store");
+    res.setHeader("Pragma", "no-cache");
+    next();
+  });
 
   app.get("/api/admin/contacts", adminGuard, async (req, res) => {
     const requestedLimit = Number.parseInt(String(req.query.limit || "30"), 10);

@@ -52,10 +52,20 @@ describe("portfolio API security", () => {
     expect(JSON.stringify(response.body)).not.toContain("privateKey");
   });
 
+  it("disables unnecessary browser capabilities", async () => {
+    const { app } = createTestApp();
+    const response = await request(app).get("/api/health");
+    expect(response.headers["permissions-policy"]).toBe(
+      "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+    );
+  });
+
   it("rejects unauthenticated administrator reads", async () => {
     const { app } = createTestApp();
     const response = await request(app).get("/api/admin/contacts");
     expect(response.status).toBe(401);
+    expect(response.headers["cache-control"]).toBe("no-store");
+    expect(response.headers.pragma).toBe("no-cache");
   });
 
   it("rejects authenticated users outside the server allowlist", async () => {
