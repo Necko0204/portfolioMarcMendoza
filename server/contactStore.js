@@ -1,3 +1,4 @@
+import { FieldValue } from "firebase-admin/firestore";
 import { FirebaseUnavailableError, getFirebaseAdmin } from "./firebaseAdmin.js";
 
 function timestampToIso(value) {
@@ -30,14 +31,13 @@ export function createFirestoreContactStore(config) {
 
   return {
     async create(submission) {
-      const { admin } = getFirebaseAdmin(config);
       const document = {
         ...submission,
         status: "new",
         internalNote: "",
         source: "portfolio-contact-form",
-        createdAt: admin.firestore.FieldValue.serverTimestamp(),
-        updatedAt: admin.firestore.FieldValue.serverTimestamp()
+        createdAt: FieldValue.serverTimestamp(),
+        updatedAt: FieldValue.serverTimestamp()
       };
       const reference = await collection().add(document);
       return reference.id;
@@ -73,13 +73,12 @@ export function createFirestoreContactStore(config) {
     },
 
     async update(id, updates) {
-      const { admin } = getFirebaseAdmin(config);
       const reference = collection().doc(id);
       const existing = await reference.get();
       if (!existing.exists) return null;
       await reference.update({
         ...updates,
-        updatedAt: admin.firestore.FieldValue.serverTimestamp()
+        updatedAt: FieldValue.serverTimestamp()
       });
       return toContactMessage(await reference.get());
     },

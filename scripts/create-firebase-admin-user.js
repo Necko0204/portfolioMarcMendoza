@@ -1,7 +1,8 @@
 import { readFile } from "node:fs/promises";
 import { stdin, stdout } from "node:process";
 import { createInterface } from "node:readline/promises";
-import admin from "firebase-admin";
+import { cert, initializeApp } from "firebase-admin/app";
+import { getAuth } from "firebase-admin/auth";
 
 const defaultEmail = "mendoza.marcangelo28@gmail.com";
 
@@ -65,7 +66,8 @@ async function main() {
     throw new Error("The selected service-account file is not for Firebase project portfolio-d77c1.");
   }
 
-  admin.initializeApp({ credential: admin.credential.cert(serviceAccount) });
+  const app = initializeApp({ credential: cert(serviceAccount) });
+  const auth = getAuth(app);
 
   const terminal = createInterface({ input: stdin, output: stdout });
   const enteredEmail = await terminal.question(`Administrator email [${defaultEmail}]: `);
@@ -76,14 +78,14 @@ async function main() {
   if (password.length < 6) throw new Error("Firebase passwords must contain at least 6 characters.");
 
   try {
-    const existingUser = await admin.auth().getUserByEmail(email);
+    const existingUser = await auth.getUserByEmail(email);
     console.log(`The Firebase user already exists.\nADMIN_UIDS=${existingUser.uid}`);
     return;
   } catch (error) {
     if (error?.code !== "auth/user-not-found") throw error;
   }
 
-  const user = await admin.auth().createUser({ email, password, emailVerified: false, disabled: false });
+  const user = await auth.createUser({ email, password, emailVerified: false, disabled: false });
   console.log(`Firebase administrator created successfully.\nADMIN_UIDS=${user.uid}`);
   console.log("Add that ADMIN_UIDS value to Render, redeploy, then change the temporary password.");
 }

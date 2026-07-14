@@ -1,4 +1,6 @@
-import admin from "firebase-admin";
+import { cert, getApp, getApps, initializeApp } from "firebase-admin/app";
+import { getAuth } from "firebase-admin/auth";
+import { getFirestore } from "firebase-admin/firestore";
 
 export class FirebaseUnavailableError extends Error {
   constructor() {
@@ -8,12 +10,12 @@ export class FirebaseUnavailableError extends Error {
 }
 
 export function getFirebaseAdminApp(config) {
-  if (admin.apps.length) return admin.app();
+  if (getApps().length) return getApp();
   const { projectId, clientEmail, privateKey, storageBucket } = config.firebase;
   if (!projectId || !clientEmail || !privateKey) return null;
 
-  return admin.initializeApp({
-    credential: admin.credential.cert({ projectId, clientEmail, privateKey }),
+  return initializeApp({
+    credential: cert({ projectId, clientEmail, privateKey }),
     ...(storageBucket ? { storageBucket } : {})
   });
 }
@@ -21,7 +23,7 @@ export function getFirebaseAdminApp(config) {
 export function getFirebaseAdmin(config) {
   const app = getFirebaseAdminApp(config);
   if (!app) throw new FirebaseUnavailableError();
-  return { admin, app, firestore: admin.firestore(app), auth: admin.auth(app) };
+  return { app, firestore: getFirestore(app), auth: getAuth(app) };
 }
 
 export async function verifyFirebaseIdToken(token, config) {
