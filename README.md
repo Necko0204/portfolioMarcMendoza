@@ -94,6 +94,14 @@ An administrator must pass both checks:
 
 Signing in successfully does not grant access by itself.
 
+To create the Authentication user from a local terminal, grant the service account the **Firebase Authentication Admin** role temporarily and run:
+
+```powershell
+pnpm firebase:create-admin -- "C:\path\to\new-service-account.json"
+```
+
+The command prompts for the email and masks the password. It never stores the password or service-account contents. Copy the printed `ADMIN_UIDS` value into Render, then the service account can be reduced to **Firebase Authentication Viewer** for normal portfolio operation.
+
 ## Contact Storage And Security
 
 The public form sends only to `POST /api/contact`.

@@ -33,7 +33,7 @@ export default tseslint.config(
     }
   },
   {
-    files: ["server/**/*.js"],
+    files: ["server/**/*.js", "scripts/**/*.js"],
     languageOptions: {
       globals: {
         Buffer: "readonly",

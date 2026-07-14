@@ -43,6 +43,9 @@ export function createApp(options = {}) {
   const verifyIdToken = options.verifyIdToken || ((token) => verifyFirebaseIdToken(token, config));
   const rateLimitEnabled = options.rateLimitEnabled ?? true;
   const app = express();
+  const contactStorageConfigured = Boolean(
+    config.firebase.projectId && config.firebase.clientEmail && config.firebase.privateKey
+  );
 
   app.disable("x-powered-by");
   app.set("trust proxy", 1);
@@ -78,7 +81,11 @@ export function createApp(options = {}) {
   );
   app.use(express.json({ limit: "20kb", strict: true }));
 
-  app.get("/api/health", (_req, res) => res.json({ ok: true, service: "marc-mendoza-portfolio-api" }));
+  app.get("/api/health", (_req, res) => res.json({
+    ok: true,
+    service: "marc-mendoza-portfolio-api",
+    contactStorage: contactStorageConfigured ? "configured" : "missing-credentials"
+  }));
 
   const contactLimiter = rateLimit({
     windowMs: config.contactRateLimitWindowMs,

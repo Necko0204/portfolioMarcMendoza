@@ -44,6 +44,14 @@ function createTestApp() {
 }
 
 describe("portfolio API security", () => {
+  it("reports missing contact-storage credentials without exposing secrets", async () => {
+    const { app } = createTestApp();
+    const response = await request(app).get("/api/health");
+    expect(response.status).toBe(200);
+    expect(response.body.contactStorage).toBe("missing-credentials");
+    expect(JSON.stringify(response.body)).not.toContain("privateKey");
+  });
+
   it("rejects unauthenticated administrator reads", async () => {
     const { app } = createTestApp();
     const response = await request(app).get("/api/admin/contacts");
