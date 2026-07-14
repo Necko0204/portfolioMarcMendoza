@@ -10,7 +10,7 @@ export default function AboutPage() {
     <>
       <Seo
         title="About Marc Mendoza | Full-Stack Systems Builder"
-        description="Marc Mendoza's professional story across Information Technology, full-stack project delivery, executive VA work, appointment setting, community management, and client operations."
+        description="Marc Mendoza's professional story across Information Technology, freelance full-stack delivery, customer service, executive VA work, and client operations."
         path="/about"
       />
       <header className="page-hero about-hero">
@@ -19,7 +19,7 @@ export default function AboutPage() {
             <p className="eyebrow">About Marc</p>
             <h1>One career story: building systems around how work actually happens.</h1>
             <p>
-              Information Technology created the technical foundation. Full-stack delivery made it practical. Operations experience added a deeper understanding of users, messages, deadlines, approvals, and client expectations.
+              Information Technology created the technical foundation. Freelance full-stack delivery made it practical. Customer service and operations experience added a deeper understanding of users, messages, deadlines, approvals, and client expectations.
             </p>
           </div>
           <div className="about-portrait-frame">

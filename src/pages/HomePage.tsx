@@ -175,10 +175,11 @@ export function HomePage() {
             <p className="eyebrow">Operations intelligence</p>
             <h2>The systems perspective comes from working inside the workflow.</h2>
             <p>
-              Executive VA and client-support experience means Marc designs around real inboxes, meetings, follow-ups, approvals, deadlines, and handovers, not abstract user stories alone.
+              Customer service, executive VA, and client-support experience means Marc designs around real inboxes, guest requests, meetings, follow-ups, approvals, deadlines, and handovers, not abstract user stories alone.
             </p>
             <ul className="signal-list">
               <li>Inbox triage with priority and SLA thinking</li>
+              <li>Guest support, issue resolution, and cross-team coordination</li>
               <li>Calendar preparation with ownership and follow-up</li>
               <li>Task, lead, SOP, and weekly reporting systems</li>
             </ul>
@@ -245,7 +246,7 @@ export function HomePage() {
           </Reveal>
           <Reveal delay={0.08} className="story-copy">
             <p>
-              Information Technology built the technical foundation. Full-stack project work turned that foundation into live systems. Executive VA, appointment-setting, and community-management work added the practical understanding of messages, deadlines, approvals, and client expectations.
+              Information Technology built the technical foundation. Freelance full-stack work turned that foundation into live client systems. Customer service, executive VA, appointment-setting, and community-management work added the practical understanding of messages, deadlines, approvals, and client expectations.
             </p>
             <p>
               Together, that experience supports one professional identity: a systems builder who can understand both the code path and the operational reality around it.

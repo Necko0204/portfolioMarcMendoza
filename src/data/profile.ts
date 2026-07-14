@@ -22,18 +22,45 @@ export const profile: Profile = {
 
 export const experiences: Experience[] = [
   {
-    role: "Executive Virtual Assistant",
-    company: "Tochigami, LLC",
-    location: "Honolulu, Hawaii",
-    period: "June 2025 - June 2026",
+    role: "Full-Stack Web Developer (Freelance)",
+    company: "Direct Client",
+    location: "Indonesia",
+    period: "June 2026 - Present",
     summary:
-      "Combined administrative reliability, customer support, coordination, and technical project contribution in a client-facing environment.",
+      "Develops and maintains a responsive order and task management platform for an Indonesian client, combining full-stack delivery with production support.",
     responsibilities: [
-      "Supported daily operations, client communication, coordination, and workflow execution.",
-      "Contributed to website and technical project work using PHP, ReactJS, and supporting tools.",
-      "Applied documentation and follow-up discipline to technical and non-technical work."
+      "Built the platform with React, TypeScript, Vite, and Firebase.",
+      "Developed customer, administrator, and super administrator portals with secure authentication, product management, order processing, balance tracking, top-up, withdrawal, commission, and notification workflows.",
+      "Improved system workflows, mobile responsiveness, bilingual support, and database security while managing deployment through GitHub and Hostinger."
+    ],
+    kind: "client"
+  },
+  {
+    role: "Customer Service Specialist",
+    company: "CoBnB Malaysia",
+    location: "Remote - Malaysia",
+    period: "May 2026 - July 2026",
+    summary:
+      "Supported accommodation guests across booking and property workflows while coordinating clear resolutions with operational and finance teams.",
+    responsibilities: [
+      "Managed guest support tickets involving check-ins, booking changes, deposits, refunds, maintenance concerns, special requests, and property policies.",
+      "Coordinated with front office, housekeeping, maintenance, and finance teams to resolve issues efficiently and provide clear guest updates.",
+      "De-escalated complaints, documented important cases for handover, and maintained courteous communication across booking platforms and WhatsApp."
     ],
     kind: "operations"
+  },
+  {
+    role: "Social Media & Community Manager (Freelance)",
+    company: "Direct Client",
+    location: "United Kingdom",
+    period: "March 2026 - June 2026",
+    summary:
+      "Built organized engagement and community-management routines for early-stage social accounts.",
+    responsibilities: [
+      "Managed social media accounts, content interaction, and community responses.",
+      "Supported visibility through platform-specific engagement and growth routines."
+    ],
+    kind: "community"
   },
   {
     role: "Appointment Setter (Part-Time, Contractual)",
@@ -49,17 +76,18 @@ export const experiences: Experience[] = [
     kind: "client"
   },
   {
-    role: "Social Media & Community Manager (Freelance)",
-    company: "Direct Client",
-    location: "United Kingdom",
-    period: "March 2026 - June 2026",
+    role: "Executive Virtual Assistant",
+    company: "Tochigami, LLC",
+    location: "Honolulu, Hawaii",
+    period: "June 2025 - June 2026",
     summary:
-      "Built organized engagement and community-management routines for early-stage social accounts.",
+      "Combined administrative reliability, customer support, coordination, and technical project contribution in a client-facing environment.",
     responsibilities: [
-      "Managed social media accounts, content interaction, and community responses.",
-      "Supported visibility through platform-specific engagement and growth routines."
+      "Supported daily operations, client communication, coordination, and workflow execution.",
+      "Contributed to website and technical project work using PHP, ReactJS, and supporting tools.",
+      "Applied documentation and follow-up discipline to technical and non-technical work."
     ],
-    kind: "community"
+    kind: "operations"
   }
 ];
 
